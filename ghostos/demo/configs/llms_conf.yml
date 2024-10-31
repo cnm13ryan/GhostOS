@@ -1,5 +1,8 @@
 # DetailConfigs ghostos.framework.llms.llms::LLMsYamlConfig
 services:
+  - name: ollama
+    base_url: http://localhost:11434/v1/
+    token: "ollama"
   - name: moonshot
     base_url: https://api.moonshot.cn/v1
     token: $MOONSHOT_API_KEY
@@ -17,10 +20,12 @@ services:
     # proxy: $OPENAI_PROXY
 # Configure default LLM API here.
 default:
+  service: ollama
+  model: qwen2.5-coder:7b-instruct-q5_K_M
   # service: moonshot
   # model: moonshot-v1-32k
-  service: openai
-  model: gpt-4o
+  # service: openai
+  # model: gpt-4o
 # The models below can be edited as you want, see details: ghostos.core.llms.configs:ModelConf
 # the key of models is a `llm_api_name`, value is a ModelConf instance.
 models:
