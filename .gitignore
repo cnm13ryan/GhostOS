@@ -174,3 +174,7 @@ cython_debug/
 #.idea/
 
 .vscode/
+
+# Backup files created by editors
+*~
+.*.un~
